@@ -14,9 +14,7 @@ create table empresa(
     nomeEmpresa varchar(45),
     razaoSocial varchar(70),
     emailEmpresa varchar(45),
-    telefoneEmpresa varchar(15),
-    idUF int,
-	foreign key (idUF) references unidadeFederativa(idUF)
+    telefoneEmpresa varchar(15)
 ) auto_increment = 100;
 
 create table usuario(
@@ -40,6 +38,8 @@ create table endereco(
     cidade varchar(45),
     cep char(8),
     idEmpresa int,
+    idUF int,
+	foreign key (idUF) references unidadeFederativa(idUF),
     foreign key (idEmpresa) references empresa(idEmpresa)
 );
 

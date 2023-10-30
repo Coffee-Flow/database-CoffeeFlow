@@ -5,8 +5,7 @@ select * from unidadeFederativa;
 select * from empresa;
 -- SELECT EMPRESA - SEM OS ID's
 select e.cnpj, e.nomeEmpresa, e.razaoSocial, e.emailEmpresa, e.telefoneEmpresa, u.sigla
-	from empresa as e join unidadeFederativa as u 
-		on e.idUF = u.idUF;
+	from empresa as e join endereco as a on a.idEmpresa = e.idEmpresa join unidadeFederativa as u on u.idUF = a.idUF;
         
 -- SELECT USUARIO        
 select * from usuario;
@@ -16,7 +15,7 @@ select u.emailUsuario, u.nomeUsuario, u.cpf, u.senha, u.nivel, e.cnpj as cnpjEmp
 -- SELECT USUARIO - PARA LOGIN (email e senha dos usuarios)
 select u.emailUsuario, u.senha from usuario as u join empresa as e
 	on u.idEmpresa = e.idEmpresa;
--- SELECT USUSARIO - PARA LOGIN (email e senha dos users de uma empresa especifica)
+-- SELECT USUARIO - PARA LOGIN (email e senha dos users de uma empresa especifica)
 select u.emailUsuario, u.senha from usuario as u join empresa as e
 	on u.idEmpresa = e.idEmpresa WHERE e.idEmpresa = 101;
     
@@ -31,7 +30,7 @@ select em.nomeEmpresa, em.telefoneEmpresa, en.tipoEndereco, en.logradouro, en.nu
 	from empresa as em join endereco as en 
 		on em.idEmpresa = en.idEmpresa
         join unidadeFederativa as u
-			on em.idUF = u.idUF;
+			on en.idUF = u.idUF;
 
 -- SELECT LAVOURA
 select * from lavoura;
@@ -81,7 +80,7 @@ select l.nome as nomeLavoura, l.cafe, l.irrigacao, l.areaha, s.nome as nomeSenso
 -- SELECT REGISTRO            
 select * from registro;
 -- SELECT REGISTRO - DA TABELA REGISTRO COM A TABELA SENSOR
-select * from registro as r join sensor as s 
+select r.idLavoura, r.idCoordenadas, r.idTipo, r.valor, r.dataHora, s.nome, s.situacao from registro as r join sensor as s 
 	on r.idLavoura = s.idLavoura AND r.idCoordenadas = s.idCoordenadas AND r.idTipo = s.idTipo;
 -- SELECT REGISTRO - DA LAVOURA, O TIPO DO SENSOR, OS REGISTROS E SUAS COORDENADAS
 select l.nome, l.cafe, t.descTipo, t.unidadeMedida, r.valor, r.dataHora, s.situacao, c.x, c.y 

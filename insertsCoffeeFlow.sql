@@ -30,10 +30,10 @@ insert into unidadeFederativa values
 	(53,'DF','Distrito Federal');
 
 insert into empresa values 
-	(null, '12345678000101', 'ABC Comércio Ltda', 'ABC Comércio Ltda', 'contato@abc.com', '(11) 1234-5678', 31),
-    (null, '98765432000102', 'XYZ Transportes S.A.', 'XYZ Transportes S.A.', 'contato@xyz.com', '(22) 9876-5432', 35),
-    (null, '34567890000103', 'InovaTech Soluções Ltda', 'InovaTech Soluções Ltda', 'contato@inovatech.com', '(33) 4567-8901', 42),
-    (null, '67890123000104', 'Global Alimentos S.A.', 'Global Alimentos S.A.', 'contato@globalfoods.com', '(44) 6789-0123', 31);
+	(null, '12345678000101', 'ABC Comércio Ltda', 'ABC Comércio Ltda', 'contato@abc.com', '(11) 1234-5678'),
+    (null, '98765432000102', 'XYZ Transportes S.A.', 'XYZ Transportes S.A.', 'contato@xyz.com', '(22) 9876-5432'),
+    (null, '34567890000103', 'InovaTech Soluções Ltda', 'InovaTech Soluções Ltda', 'contato@inovatech.com', '(33) 4567-8901'),
+    (null, '67890123000104', 'Global Alimentos S.A.', 'Global Alimentos S.A.', 'contato@globalfoods.com', '(44) 6789-0123');
     
 insert into usuario values
 	(null, 'joaosilva@abc.com', 'João Silva', '12345678901', 'AbCcomerc10*', 1, 100),
@@ -46,10 +46,10 @@ insert into usuario values
     (null, 'soniaabraao@xyz.com', 'Sonia Abrãao', '48793648354', 'SAxyzSenha654$#', 1, 101);
 
 insert into endereco values 
-	(null, 'Comercial', 'Rua Principal', 123, 'Sala 101', 'Centro', 'Belo Horizonte', '12345678', 100),
-    (null, 'Residencial', 'Avenida da Paz', 456, NULL, 'Jardim Botânico', 'São Paulo', '54321987', 101),
-    (null, 'Comercial', 'Rua da Inovação', 789, 'Andar 2', 'Distrito Industrial', 'Florianópolis', '67890123', 102),
-    (null, 'Residencial', 'Avenida das Delícias', 1011, 'Bloco A', 'Bairro Nobre', 'Uberlândia', '89012345', 103);
+	(null, 'Comercial', 'Rua Principal', 123, 'Sala 101', 'Centro', 'Belo Horizonte', '12345678', 100, 31),
+    (null, 'Residencial', 'Avenida da Paz', 456, NULL, 'Jardim Botânico', 'São Paulo', '54321987', 101, 35),
+    (null, 'Comercial', 'Rua da Inovação', 789, 'Andar 2', 'Distrito Industrial', 'Florianópolis', '67890123', 102, 42),
+    (null, 'Residencial', 'Avenida das Delícias', 1011, 'Bloco A', 'Bairro Nobre', 'Uberlândia', '89012345', 103, 31);
     
 insert into lavoura values
 	(null, 'Café Dourado', 'Arábica', 'Irrigada', 320, 8.2, 1),
