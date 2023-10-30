@@ -8,20 +8,8 @@ create table unidadeFederativa(
     nome varchar(45)
 );
 
-create table tipo(
-	idTipo int primary key,
-    descTipo varchar(45),
-    unidadeMedida varchar(45)
-);
-
-create table coordenadas(
-	idCoordenadas int primary key,
-    x int,
-    y int
-);
-
 create table empresa(
-	idEmpresa int primary key,
+	idEmpresa int primary key auto_increment,
     cnpj char(14),
     nomeEmpresa varchar(45),
     razaoSocial varchar(70),
@@ -29,10 +17,10 @@ create table empresa(
     telefoneEmpresa varchar(15),
     idUF int,
 	foreign key (idUF) references unidadeFederativa(idUF)
-);
+) auto_increment = 100;
 
 create table usuario(
-	idUsuario int primary key,
+	idUsuario int primary key auto_increment,
     emailUsuario varchar(45),
     nomeUsuario varchar(45),
     cpf char(11),
@@ -43,7 +31,7 @@ create table usuario(
 );
 
 create table endereco(
-	idEndereco int primary key,
+	idEndereco int primary key auto_increment,
     tipoEndereco varchar(45),
     logradouro varchar(45),
     numero int,
@@ -56,7 +44,7 @@ create table endereco(
 );
 
 create table lavoura(
-	idLavoura int primary key,
+	idLavoura int primary key auto_increment,
     nome varchar(45),
     cafe varchar(15),
     irrigacao varchar(20),
@@ -64,6 +52,18 @@ create table lavoura(
     areaha float,
     idEndereco int,
     foreign key (idEndereco) references endereco(idEndereco)
+);
+
+create table tipo(
+	idTipo int primary key auto_increment,
+    descTipo varchar(45),
+    unidadeMedida varchar(45)
+);
+
+create table coordenadas(
+	idCoordenadas int primary key auto_increment,
+    x int,
+    y int
 );
 
 create table sensor(
@@ -80,7 +80,7 @@ create table sensor(
 );
 
 create table registro(
-	idRegistro int,
+	idRegistro int auto_increment,
     idLavoura int,
     idCoordenadas int,
     idTipo int,
