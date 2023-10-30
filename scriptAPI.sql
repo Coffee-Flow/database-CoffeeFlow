@@ -44,6 +44,6 @@ select * from lavoura join sensor on lavoura.idLavoura = sensor.idLavoura join d
 -- histórico de um sensor específico
 select * from lavoura join sensor on lavoura.idLavoura = sensor.idLavoura join dados on dados.idSensor = sensor.idSensor where sensor.idSensor = '2';
 
-select * from dados where idSensor = 4;
-select * from dados where idSensor = 2;
-select * from dados where idSensor = 1;
+select * from dados where idSensor = 4 order by valor asc;
+select * from dados where idSensor = 2 order by valor asc;
+select * from dados where idSensor = 1 order by valor asc;

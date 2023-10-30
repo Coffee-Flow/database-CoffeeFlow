@@ -1,3 +1,5 @@
+use coffeeflow;
+
 -- SELECT UNIDADE FEDERATIVA
 select * from unidadeFederativa;
 

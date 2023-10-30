@@ -62,9 +62,9 @@ insert into lavoura values
 
 -- Como o DHT11 captura 2 valores com unidades de medida diferentes, para especificar o tipo de dados que estamos registrando, dividi ele em dois tipos
 insert into tipo values 
-	(null, 'Temperatura - DHT11', 'C°'),
+	(null, 'Temperatura - DHT11', '°C'),
 	(null, 'Umidade - DHT11', '%'),
-	(null, 'Temperatura - LM35', 'C°');
+	(null, 'Temperatura - LM35', '°C');
     
 insert into coordenadas values
 	(null, 1, 1),  
